@@ -86,4 +86,3 @@ docker compose run --rm tool src/your_script.py --input input/x.json --output ou
 
 その他：重い OS 依存ライブラリのビルドが要る場合は実行用 `Dockerfile` に
 `apt-get install build-essential` を追加、または `python:3.12`（非 slim）へ。
-`dev/` と `.devcontainer.json` をコミットしたくない運用なら `.gitignore` の該当行を有効化。
