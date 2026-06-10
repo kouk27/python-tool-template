@@ -9,7 +9,9 @@ WORKDIR /work
 COPY requirements.txt /work/requirements.txt
 RUN pip install --no-cache-dir -r /work/requirements.txt
 
-# 非 root ユーザ（compose の user: でホストの UID/GID に上書きされる想定）
+# 既定 UID=1000 の app ユーザ。compose の user: が UID/GID を上書きするが、
+# Mac/Win や UID=1000 の Linux では本ユーザに一致して HOME 等が活きる。
+# UID≠1000 の Linux では無名 UID で動くため、ENV HOME=/tmp が HOME を確保する。
 RUN useradd -m -u 1000 app
 USER app
 
