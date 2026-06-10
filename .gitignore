@@ -1,10 +1,6 @@
 # 実行ユーザ設定（ホスト固有の UID/GID）
 .env
 
-# 実行時生成物（プロジェクトに合わせて調整）
-/output/*
-!/output/.gitkeep
-
 # Python
 __pycache__/
 *.py[cod]
