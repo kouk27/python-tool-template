@@ -1,0 +1,15 @@
+{
+  "name": "python-tool-dev",
+  // compose の dev サービスを共有（CLI: docker compose run --rm dev bash と同じ環境）
+  "dockerComposeFile": "compose.yaml",
+  "service": "dev",
+  "workspaceFolder": "/workspace",
+  "remoteUser": "vscode",
+  // requirements.txt があれば自動導入（無ければスキップ）
+  "postCreateCommand": "pip install --user -r requirements.txt 2>/dev/null || echo 'no requirements.txt yet'",
+  "customizations": {
+    "vscode": {
+      "extensions": ["anthropic.claude-code", "ms-python.python"]
+    }
+  }
+}

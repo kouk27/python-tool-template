@@ -1,0 +1,23 @@
+services:
+  # ---- 開発用（Claude Code 同梱）----
+  #   CLI: docker compose run --rm dev bash   （対話シェルで claude / pytest を実行）
+  #   常駐: docker compose up -d dev && docker compose exec dev bash
+  #   volumusはcompose.override.ymlに定義。"- .:/workspace" 及び、Claude Codeの認証情報等
+  dev:
+    build:
+      context: .
+      dockerfile: dev/Dockerfile
+    working_dir: /workspace
+    command: sleep infinity
+
+  # ---- 実行用ツール ----
+  tool:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /work
+    volumes:
+      - .:/work
+    user: "${UID:-1000}:${GID:-1000}"
+    # 外部通信しないツールを隔離するならコメントを外す:
+    # network_mode: none

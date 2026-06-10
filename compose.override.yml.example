@@ -1,0 +1,6 @@
+services:
+  dev:
+    volumes:
+      - .:/workspace
+      - ~/.claude:/home/vscode/.claude
+      - ~/.claude.json:/home/vscode/.claude.json
