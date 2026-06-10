@@ -1,7 +1,7 @@
 {
   "name": "python-tool-dev",
   // compose の dev サービスを共有（CLI: docker compose run --rm dev bash と同じ環境）
-  "dockerComposeFile": "compose.yaml",
+  "dockerComposeFile": ["compose.yaml", "compose.override.yml"],
   "service": "dev",
   "workspaceFolder": "/workspace",
   "remoteUser": "vscode",

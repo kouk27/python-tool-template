@@ -8,6 +8,8 @@ services:
       context: .
       dockerfile: dev/Dockerfile
     working_dir: /workspace
+    volumes:
+      - .:/workspace
     command: sleep infinity
 
   # ---- 実行用ツール ----

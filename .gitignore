@@ -18,7 +18,3 @@ venv/
 .vscode/
 
 compose.override.yml
-
-# Claude Code 開発環境をコミットしたくない運用なら有効化:
-# dev/
-# .devcontainer.json

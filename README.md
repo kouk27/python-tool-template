@@ -23,6 +23,13 @@ Python のバッチ／CLI ツールを **Docker で隔離して開発・実行**
 
 ---
 
+## 初回セットアップ（CLI / devcontainer 共通・必須）
+
+```bash
+cp compose.override.yml.example compose.override.yml
+# 必要に応じて ~/.claude のパス等を自分の環境に合わせて編集
+```
+
 ## 使用方法（開発）
 
 ### A. CLI
